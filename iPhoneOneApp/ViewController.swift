@@ -42,11 +42,11 @@ class ViewController: UIViewController {
              // 提起棋子
             mouesData.downFlag = game!.raise(point)
          
-//             // 计算鼠标与棋子中心的距离（提升流畅度）
-//            if(mouesData.downFlag){
-//                 mouesData.dpoint.x = game!.raisePiece!.point.x - point.x
-//                 mouesData.dpoint.y = game!.raisePiece!.point.y - point.y
-//            }
+             // 计算鼠标与棋子中心的距离（提升流畅度）
+            if(mouesData.downFlag){
+                 mouesData.dpoint.x = game!.raisePiece!.point.x - point.x
+                 mouesData.dpoint.y = game!.raisePiece!.point.y - point.y
+            }
             mainView.setNeedsDisplay()
          }
     }
@@ -86,9 +86,15 @@ class ViewController: UIViewController {
     /// 关联按钮 红对黑
     @IBAction func OnNew(_ sender: Any) {
         game?.playGame()
+        mainView.reversal = false 
         mainView.setNeedsDisplay()
     }
-    
+    /// 关联按钮 黑对红
+    @IBAction func OnNewPlus(_ sender: Any) {
+        game?.playGame()
+        mainView.reversal = true
+        mainView.setNeedsDisplay()
+    }
     
     
 }

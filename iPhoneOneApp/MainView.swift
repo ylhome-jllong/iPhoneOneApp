@@ -9,7 +9,9 @@
 import UIKit
 
 class MainView: UIView {
-
+    
+    /// 用于标志红对黑游戏 true 红对黑  false 黑对红
+    var  reversal = false
     var game: Game?
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -43,18 +45,37 @@ class MainView: UIView {
     }
     /// 将坐标转换为View坐标
     private func toViewPoint(_ oldPoint: CGPoint)->CGPoint{
-        var newPoint = CGPoint()
+        var newPoint = oldPoint
         let height = game!.checkerboard.boardSize!.height
-        newPoint.x = oldPoint.x
-        newPoint.y = oldPoint.y + bounds.height/2-height/2
+        
+        // 棋盘反转
+        if(!reversal){
+            newPoint.x = abs(newPoint.x - game!.checkerboard.boardSize!.width)
+            newPoint.y = abs(newPoint.y - game!.checkerboard.boardSize!.height)
+        }
+        
+        // 坐标转换为View显示坐标
+        newPoint.x = newPoint.x + 0
+        newPoint.y = newPoint.y + bounds.height/2-height/2
+        
         return newPoint
     }
+    
     /// 将坐标转换为Board坐标
     func toBoardPoint(_ oldPoint: CGPoint)->CGPoint{
-        var newPoint = CGPoint()
+       
+        var newPoint = oldPoint
         let height = game!.checkerboard.boardSize!.height
-        newPoint.x = oldPoint.x
-        newPoint.y = oldPoint.y - (bounds.height/2-height/2)
+        // 坐标转换回棋盘坐标
+        newPoint.x = newPoint.x + 0
+        newPoint.y = newPoint.y - (bounds.height/2-height/2)
+        
+        // 棋盘反转
+        if(!reversal){
+            newPoint.x = abs(newPoint.x - game!.checkerboard.boardSize!.width)
+            newPoint.y = abs(newPoint.y - game!.checkerboard.boardSize!.height)
+        }
+       
         return newPoint
     }
 

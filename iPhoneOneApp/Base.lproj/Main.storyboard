@@ -16,11 +16,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyX-IC-qfh">
-                                <rect key="frame" x="63" y="120" width="77" height="30"/>
+                                <rect key="frame" x="249" y="115" width="77" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="开始红对黑"/>
                                 <connections>
                                     <action selector="OnNew:" destination="BYZ-38-t0r" eventType="touchDown" id="dfg-v0-jWl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyx-or-FTT">
+                                <rect key="frame" x="69" y="115" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="开始黑对红"/>
+                                <connections>
+                                    <action selector="OnNewPlus:" destination="BYZ-38-t0r" eventType="touchDown" id="jQn-iN-iGK"/>
                                 </connections>
                             </button>
                         </subviews>
