@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7918A62A24809B070091BBEA /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7918A62924809B070091BBEA /* SwiftSocket.framework */; };
+		7918A62B24809B070091BBEA /* SwiftSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7918A62924809B070091BBEA /* SwiftSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7918A62F24809B700091BBEA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7918A62D24809B700091BBEA /* Client.swift */; };
+		7918A63024809B700091BBEA /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7918A62E24809B700091BBEA /* Server.swift */; };
+		7918A63624809CB40091BBEA /* NetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7918A63224809CB40091BBEA /* NetGame.swift */; };
 		79FFD74B247F7E5D00ABB455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD74A247F7E5D00ABB455 /* AppDelegate.swift */; };
 		79FFD74D247F7E5D00ABB455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD74C247F7E5D00ABB455 /* SceneDelegate.swift */; };
 		79FFD74F247F7E5D00ABB455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD74E247F7E5D00ABB455 /* ViewController.swift */; };
@@ -19,7 +24,25 @@
 		79FFD766247F855900ABB455 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFD765247F855900ABB455 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7918A62C24809B080091BBEA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7918A62B24809B070091BBEA /* SwiftSocket.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		7918A62924809B070091BBEA /* SwiftSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSocket.framework; path = iPhoneOneApp/Socket/SwiftSocket.framework; sourceTree = "<group>"; };
+		7918A62D24809B700091BBEA /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Client.swift; path = iPhoneOneApp/Socket/Client.swift; sourceTree = SOURCE_ROOT; };
+		7918A62E24809B700091BBEA /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Server.swift; path = iPhoneOneApp/Socket/Server.swift; sourceTree = SOURCE_ROOT; };
+		7918A63224809CB40091BBEA /* NetGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetGame.swift; sourceTree = "<group>"; };
 		79FFD747247F7E5D00ABB455 /* iPhoneOneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhoneOneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FFD74A247F7E5D00ABB455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79FFD74C247F7E5D00ABB455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,18 +62,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7918A62A24809B070091BBEA /* SwiftSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7918A62724809AA70091BBEA /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				7918A62D24809B700091BBEA /* Client.swift */,
+				7918A62E24809B700091BBEA /* Server.swift */,
+			);
+			name = Socket;
+			path = Game/Socket;
+			sourceTree = "<group>";
+		};
+		7918A62824809B070091BBEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7918A62924809B070091BBEA /* SwiftSocket.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7918A63124809CB40091BBEA /* NetGame */ = {
+			isa = PBXGroup;
+			children = (
+				7918A63224809CB40091BBEA /* NetGame.swift */,
+			);
+			path = NetGame;
+			sourceTree = "<group>";
+		};
 		79FFD73E247F7E5D00ABB455 = {
 			isa = PBXGroup;
 			children = (
-				79FFD75E247F7F6000ABB455 /* Game */,
 				79FFD749247F7E5D00ABB455 /* iPhoneOneApp */,
 				79FFD748247F7E5D00ABB455 /* Products */,
+				7918A62824809B070091BBEA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +123,9 @@
 				79FFD753247F7E6800ABB455 /* Assets.xcassets */,
 				79FFD755247F7E6800ABB455 /* LaunchScreen.storyboard */,
 				79FFD758247F7E6800ABB455 /* Info.plist */,
+				79FFD75E247F7F6000ABB455 /* Game */,
+				7918A63124809CB40091BBEA /* NetGame */,
+				7918A62724809AA70091BBEA /* Socket */,
 			);
 			path = iPhoneOneApp;
 			sourceTree = "<group>";
@@ -84,8 +137,7 @@
 				79FFD760247F7F6000ABB455 /* Piece.swift */,
 				79FFD761247F7F6000ABB455 /* Checkerboard.swift */,
 			);
-			name = Game;
-			path = iPhoneOneApp/Game;
+			path = Game;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,6 +150,7 @@
 				79FFD743247F7E5D00ABB455 /* Sources */,
 				79FFD744247F7E5D00ABB455 /* Frameworks */,
 				79FFD745247F7E5D00ABB455 /* Resources */,
+				7918A62C24809B080091BBEA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,7 +217,10 @@
 				79FFD74F247F7E5D00ABB455 /* ViewController.swift in Sources */,
 				79FFD74B247F7E5D00ABB455 /* AppDelegate.swift in Sources */,
 				79FFD763247F7F6100ABB455 /* Piece.swift in Sources */,
+				7918A63624809CB40091BBEA /* NetGame.swift in Sources */,
 				79FFD74D247F7E5D00ABB455 /* SceneDelegate.swift in Sources */,
+				7918A62F24809B700091BBEA /* Client.swift in Sources */,
+				7918A63024809B700091BBEA /* Server.swift in Sources */,
 				79FFD762247F7F6100ABB455 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +367,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iPhoneOneApp/Socket",
+				);
 				INFOPLIST_FILE = iPhoneOneApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -329,6 +389,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iPhoneOneApp/Socket",
+				);
 				INFOPLIST_FILE = iPhoneOneApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
