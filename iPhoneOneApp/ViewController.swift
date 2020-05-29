@@ -4,7 +4,7 @@
 //
 //  Created by 江龙 on 2020/5/28.
 //  Copyright © 2020 江龙. All rights reserved.
-//  不同平台的坐标转化！！！！！！！！！！！！！！
+//
 
 import UIKit
 
@@ -51,7 +51,6 @@ class ViewController: UIViewController {
         // 处理
         touchesBegan(point: point)
         // 发送网络信息
-        // 不同平台坐标转换！！！！！！！！
         if(netGame!.netGameState == .play){netGame?.netMouseDown(point: point)}
         
     }
@@ -81,7 +80,6 @@ class ViewController: UIViewController {
             let point = mainView.toBoardPoint(touches.first!.location(in: self.view))
             toucheMoved(point: point)
             // 网络信息发送
-            // 不同平台坐标转换！！！！！！！！
             if(netGame!.netGameState == .play) {netGame?.netMouseDragged(point: point)}
         }
     }
@@ -106,7 +104,6 @@ class ViewController: UIViewController {
             let point = mainView.toBoardPoint(touches.first!.location(in: self.view))
             touchesEnded(point: point)
             // 发送网络消息
-            // 不同平台坐标转换！！！！！！！！
             if(netGame!.netGameState == .play) {netGame?.netMouseUp(point: point)}
         }
     }
@@ -149,17 +146,14 @@ extension ViewController: NetGameProtocol{
     }
     
     func mouseDown(point: CGPoint) {
-        // 不同平台坐标转换！！！！！！！！
         self.touchesBegan(point: point)
     }
     
     func mouseUp(point: CGPoint) {
-        // 不同平台坐标转换！！！！！！！！
         self.touchesEnded(point: point)
     }
     
     func mouseDragged(point: CGPoint) {
-        // 不同平台坐标转换！！！！！！！！
         self.toucheMoved(point: point)
     }
     
